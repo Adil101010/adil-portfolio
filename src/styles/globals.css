@@ -1,0 +1,127 @@
+:root {
+  --font-display: 'Cabinet Grotesk', 'Inter', sans-serif;
+  --font-body: 'Satoshi', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.82rem);
+  --text-sm: clamp(0.85rem, 0.78rem + 0.35vw, 0.98rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.1rem);
+  --text-lg: clamp(1.2rem, 1rem + 0.75vw, 1.6rem);
+  --text-xl: clamp(1.6rem, 1.2rem + 1.25vw, 2.4rem);
+  --text-2xl: clamp(2.2rem, 1.2rem + 2.5vw, 3.8rem);
+  --text-hero: clamp(3.5rem, 1rem + 7vw, 8rem);
+
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+
+  --color-bg: #06070d;
+  --color-surface: rgba(16, 18, 28, 0.72);
+  --color-surface-2: rgba(24, 27, 40, 0.9);
+  --color-border: rgba(255,255,255,0.09);
+  --color-text: #edf0ff;
+  --color-text-muted: #8b90aa;
+  --color-text-faint: #4f5468;
+  --color-primary: #4effe0;
+  --color-primary-dim: rgba(78, 255, 224, 0.12);
+  --color-fire: #ff6b2b;
+  --color-fire-dim: rgba(255, 107, 43, 0.12);
+  --color-gold: #ffd166;
+  --color-gold-dim: rgba(255, 209, 102, 0.12);
+  --color-purple: #a78bfa;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
+  --shadow-md: 0 10px 40px rgba(0,0,0,.35);
+  --shadow-lg: 0 30px 100px rgba(0,0,0,.55);
+  --shadow-glow-teal: 0 0 60px rgba(78,255,224,.18);
+  --shadow-glow-fire: 0 0 60px rgba(255,107,43,.18);
+  --radius-sm: .4rem; --radius-md: .9rem; --radius-lg: 1.4rem;
+  --radius-xl: 2rem; --radius-full: 9999px;
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --content: 1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+img, svg { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { font: inherit; border: none; background: none; color: inherit; cursor: pointer; }
+ul[role="list"], ol[role="list"] { list-style: none; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+::selection { background: rgba(78, 255, 224, 0.2); color: var(--color-text); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+
+/* 1. HTML/Body overflow fix */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 0; /* ✅ important */
+}
+
+/* 2. Container fix — ye sabse important hai */
+.container,
+.wrapper,
+[class*="container"],
+[class*="wrapper"] {
+  width: 100%;
+  max-width: var(--content); /* 1180px on desktop */
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2rem); /* ✅ mobile pe padding dega */
+  box-sizing: border-box;
+}
+
+/* 3. Section padding responsive */
+section,
+.section {
+  padding-block: clamp(var(--space-10), 8vw, var(--space-24));
+  padding-inline: clamp(var(--space-4), 5vw, var(--space-8));
+  overflow: visible; /* ✅ hidden mat rakho sections pe */
+}
+
+/* 4. All grids auto-collapse on mobile */
+[class*="grid"] {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 5. Images safe */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== BREAKPOINTS ===== */
+@media (max-width: 768px) {
+  :root {
+    --content: 100%; /* ✅ mobile pe full width */
+  }
+  
+  .container,
+  .wrapper,
+  [class*="container"] {
+    padding-inline: var(--space-4); /* 16px side padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .wrapper,
+  [class*="container"] {
+    padding-inline: var(--space-3); /* 12px side padding */
+  }
+}
