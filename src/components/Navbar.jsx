@@ -306,7 +306,7 @@ export default function Navbar({ scrollY }) {
                 <path d="M11.5 17h9" />
               </svg>
             </span>
-            <span className="brand-name">Adil <span>Saifi</span></span>
+            <span className="brand-name">Adil Saifi <span></span></span>
           </a>
 
           <nav className="nav-pill" aria-label="Primary">
@@ -341,7 +341,7 @@ export default function Navbar({ scrollY }) {
               >
                 <path d="M12 3v13M6 11l6 6 6-6M3 21h18" />
               </svg>
-              Download CV
+              Download Resume
             </a>
 
             <button
