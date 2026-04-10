@@ -4,7 +4,7 @@ export const personal = {
   email: "adilsaifi829@gmail.com",
   phone: "+91 72488 32390",
   github: "https://github.com/Adil101010",
-  linkedin: "linkedin.com/in/adil-saifi-a40b11254",
+  linkedin: "https://www.linkedin.com/in/adil-saifi-a40b11254",
   resume: "./Adil_Resume.pdf",
   location: "Noida, India",
   bio: "Java Full-Stack Developer with hands-on industry experience building real-world applications using Core Java, Spring Boot, REST APIs, MySQL, and modern frontend technologies. I build end-to-end solutions — clean backend, responsive UI, production-grade quality.",
