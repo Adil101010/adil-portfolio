@@ -306,7 +306,7 @@ export default function Navbar({ scrollY }) {
                 <path d="M11.5 17h9" />
               </svg>
             </span>
-            <span className="brand-name">Adil Saifi <span></span></span>
+            <span className="brand-name"><span></span>Adil Saifi</span>
           </a>
 
           <nav className="nav-pill" aria-label="Primary">
